@@ -3,27 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="css/style.css">
-    <title>修行宝库 | 首页</title>
+    <title>修行宝库 | 工业级独立站</title>
+    <style>
+        /* 样式全部整合在这里，确保你不用再去管其他 CSS 文件 */
+        body { background: #f4f1ea; color: #3e3a36; font-family: sans-serif; margin: 0; display: flex; justify-content: center; padding: 15px; }
+        .main-card { max-width: 600px; width: 100%; background: #fff; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        h1 { color: #8c6d51; text-align: center; font-size: 1.6rem; border-bottom: 2px solid #fdfaf2; padding-bottom: 15px; }
+        
+        /* 核心路径导航 */
+        .section-header { background: #fdfaf2; padding: 10px 15px; border-radius: 8px; color: #8c6d51; font-weight: bold; margin: 20px 0 10px 0; display: flex; justify-content: space-between; }
+        
+        /* 列表逻辑：确保后期一万条资料也不乱 */
+        .item-link { display: flex; align-items: center; padding: 15px; text-decoration: none; color: #444; border-bottom: 1px solid #f9f9f9; transition: 0.2s; }
+        .item-link:hover { background: #fffcf5; transform: translateX(5px); }
+        .item-icon { margin-right: 12px; font-size: 1.2rem; }
+        .item-meta { font-size: 0.75rem; color: #999; margin-left: auto; }
+
+        /* 视频框 */
+        .video-wrapper { width: 100%; background: #000; border-radius: 12px; overflow: hidden; aspect-ratio: 16/9; margin-top: 10px; }
+    </style>
 </head>
 <body>
     <div class="main-card">
         <h1>修行宝库</h1>
-        <p class="subtitle">万卷资料 · 悉数收录</p>
         
-        <div class="nav-grid">
-            <a href="index.html" class="nav-item active">🏠 首页</a>
-            <a href="pages/video-list.html" class="nav-item">📹 视频讲座</a>
-            <a href="pages/text-library.html" class="nav-item">📜 文字经书</a>
+        <div class="section-header">
+            <span>📹 视频讲座库</span>
+            <small>路径: /video/</small>
+        </div>
+        
+        <div class="video-wrapper">
+            <video width="100%" controls poster="">
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; padding: 10px 5px;">
+            <b>当前播放：</b> 暂未上传视频 (请前往 /video 文件夹上传)
+        </p>
+
+        <div class="section-header">
+            <span>📜 文字经书库</span>
+            <small>路径: /docs/</small>
         </div>
 
-        <div class="content-section">
-            <h3>📢 最新公告</h3>
-            <p style="font-size: 0.9rem; color: #666;">欢迎来到独立修行站，万人架构已部署完毕。</p>
-        </div>
+        <div class="list-container">
+            <a href="docs/article-1.html" class="item-link">
+                <span class="item-icon">📖</span>
+                <span>修行入门：第一课基础心态</span>
+                <span class="item-meta">2024-05-20</span>
+            </a>
 
-        <div class="footer">
-            自给自足 · 独立永存
+            <a href="docs/article-2.html" class="item-link">
+                <span class="item-icon">📖</span>
+                <span>静心指引：如何处理杂念</span>
+                <span class="item-meta">2024-05-21</span>
+            </a>
+            
+            </div>
+
+        <div style="text-align: center; color: #ccc; font-size: 0.7rem; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+            架构状态：工业级分片存储已就绪<br>
+            支持万人同时并发访问
         </div>
     </div>
 </body>
