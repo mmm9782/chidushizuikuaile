@@ -3,67 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>修行宝库 | 工业级独立站</title>
+    <title>修行宝库 | 导航中心</title>
     <style>
-        body { background: #f4f1ea; color: #3e3a36; font-family: sans-serif; margin: 0; display: flex; justify-content: center; padding: 15px; }
-        .main-card { max-width: 600px; width: 100%; background: #fff; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        h1 { color: #8c6d51; text-align: center; font-size: 1.6rem; border-bottom: 2px solid #fdfaf2; padding-bottom: 15px; }
+        body { background: #f4f1ea; color: #3e3a36; font-family: sans-serif; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { max-width: 500px; width: 90%; text-align: center; }
+        h1 { color: #8c6d51; margin-bottom: 30px; letter-spacing: 2px; }
         
-        /* 核心路径导航 */
-        .section-header { background: #fdfaf2; padding: 10px 15px; border-radius: 8px; color: #8c6d51; font-weight: bold; margin: 20px 0 10px 0; display: flex; justify-content: space-between; }
+        /* 一级导航大卡片布局 */
+        .nav-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .nav-card { 
+            background: white; 
+            padding: 30px 10px; 
+            border-radius: 20px; 
+            text-decoration: none; 
+            color: #5d4037; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .nav-card:active { transform: scale(0.95); }
+        .nav-icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .nav-title { font-weight: bold; font-size: 1.1rem; }
         
-        /* 列表逻辑 */
-        .item-link { display: flex; align-items: center; padding: 15px; text-decoration: none; color: #444; border-bottom: 1px solid #f9f9f9; transition: 0.2s; }
-        .item-link:hover { background: #fffcf5; transform: translateX(5px); }
-        .item-icon { margin-right: 12px; font-size: 1.2rem; }
-        .item-meta { font-size: 0.75rem; color: #999; margin-left: auto; }
-
-        /* 视频框 */
-        .video-wrapper { width: 100%; background: #000; border-radius: 12px; overflow: hidden; aspect-ratio: 16/9; margin-top: 10px; }
+        .footer { margin-top: 40px; font-size: 0.8rem; color: #ccc; }
     </style>
 </head>
 <body>
-    <div class="main-card">
+    <div class="container">
         <h1>修行宝库</h1>
         
-        <div class="section-header">
-            <span>📹 视频讲座库</span>
-            <small>路径: /视频/</small>
-        </div>
-        
-        <div class="video-wrapper">
-            <video width="100%" controls poster="">
-                <source src="" type="video/mp4">
-            </video>
-        </div>
-        <p style="font-size: 0.85rem; color: #666; padding: 10px 5px;">
-            <b>当前：</b> 2TB云端存储对接中
-        </p>
-
-        <div class="section-header">
-            <span>📜 文字经书库</span>
-            <small>路径: /文档/</small>
-        </div>
-
-        <div class="list-container">
+        <div class="nav-grid">
+            <a href="#" class="nav-card">
+                <span class="nav-icon">💬</span>
+                <span class="nav-title">互动群聊</span>
+            </a>
             
-            <a href="docs/jiehuo-01.html" class="item-link">
-                <span class="item-icon">📜</span>
-                <span>修行解惑：关于解脱与法</span>
-                <span class="item-meta">2026-01-30</span>
+            <a href="pages/video-list.html" class="nav-card">
+                <span class="nav-icon">📹</span>
+                <span class="nav-title">精选视频</span>
             </a>
-            <a href="#" class="item-link" style="opacity: 0.5;">
-                <span class="item-icon">📖</span>
-                <span>更多资料整理中...</span>
-                <span class="item-meta">待更新</span>
+            
+            <a href="pages/scripture-list.html" class="nav-card">
+                <span class="nav-icon">📜</span>
+                <span class="nav-title">经典阅读</span>
             </a>
-
+            
+            <a href="pages/qa-list.html" class="nav-card">
+                <span class="nav-icon">🙏</span>
+                <span class="nav-title">文字解惑</span>
+            </a>
         </div>
 
-        <div style="text-align: center; color: #ccc; font-size: 0.7rem; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
-            架构状态：工业级分片存储已就绪<br>
-            支持万人同时并发访问
-        </div>
+        <div class="footer">工业级加密防护 · 万人在线架构</div>
     </div>
 </body>
 </html>
