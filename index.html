@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>修行宝库 | 工业级独立站</title>
     <style>
-        /* 样式全部整合在这里，确保你不用再去管其他 CSS 文件 */
         body { background: #f4f1ea; color: #3e3a36; font-family: sans-serif; margin: 0; display: flex; justify-content: center; padding: 15px; }
         .main-card { max-width: 600px; width: 100%; background: #fff; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         h1 { color: #8c6d51; text-align: center; font-size: 1.6rem; border-bottom: 2px solid #fdfaf2; padding-bottom: 15px; }
@@ -13,7 +12,7 @@
         /* 核心路径导航 */
         .section-header { background: #fdfaf2; padding: 10px 15px; border-radius: 8px; color: #8c6d51; font-weight: bold; margin: 20px 0 10px 0; display: flex; justify-content: space-between; }
         
-        /* 列表逻辑：确保后期一万条资料也不乱 */
+        /* 列表逻辑 */
         .item-link { display: flex; align-items: center; padding: 15px; text-decoration: none; color: #444; border-bottom: 1px solid #f9f9f9; transition: 0.2s; }
         .item-link:hover { background: #fffcf5; transform: translateX(5px); }
         .item-icon { margin-right: 12px; font-size: 1.2rem; }
@@ -29,7 +28,7 @@
         
         <div class="section-header">
             <span>📹 视频讲座库</span>
-            <small>路径: /video/</small>
+            <small>路径: /视频/</small>
         </div>
         
         <div class="video-wrapper">
@@ -38,28 +37,28 @@
             </video>
         </div>
         <p style="font-size: 0.85rem; color: #666; padding: 10px 5px;">
-            <b>当前播放：</b> 暂未上传视频 (请前往 /video 文件夹上传)
+            <b>当前：</b> 2TB云端存储对接中
         </p>
 
         <div class="section-header">
             <span>📜 文字经书库</span>
-            <small>路径: /docs/</small>
+            <small>路径: /文档/</small>
         </div>
 
         <div class="list-container">
-            <a href="docs/article-1.html" class="item-link">
+            
+            <a href="文档/jiehuo-01.html" class="item-link">
+                <span class="item-icon">📜</span>
+                <span>修行解惑：关于解脱与法</span>
+                <span class="item-meta">2026-01-30</span>
+            </a>
+            <a href="#" class="item-link" style="opacity: 0.5;">
                 <span class="item-icon">📖</span>
-                <span>修行入门：第一课基础心态</span>
-                <span class="item-meta">2024-05-20</span>
+                <span>更多资料整理中...</span>
+                <span class="item-meta">待更新</span>
             </a>
 
-            <a href="docs/article-2.html" class="item-link">
-                <span class="item-icon">📖</span>
-                <span>静心指引：如何处理杂念</span>
-                <span class="item-meta">2024-05-21</span>
-            </a>
-            
-            </div>
+        </div>
 
         <div style="text-align: center; color: #ccc; font-size: 0.7rem; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
             架构状态：工业级分片存储已就绪<br>
