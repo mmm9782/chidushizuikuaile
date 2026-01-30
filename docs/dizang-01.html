@@ -13,14 +13,25 @@
         }
         .sutra-container {
             background-color: #fff;
-            width: 480px; /* 关键：固定宽度以维持一行约20字 */
+            width: 510px; /* 关键：固定宽度以维持一行约20字 */
             padding: 50px 60px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            line-height: 4.5; /* 为拼音留出充足垂直空间 */
+            line-height: 5; /* 为拼音留出充足垂直空间 */
             letter-spacing: 4px; /* 字间距，增加阅读舒适度 */
             text-align: justify;
-            font-size: 22px; /* 字体大小适中 */
+            font-size: 26px; /* 字体大小适中 */
             font-family: "PingFang SC", "Microsoft YaHei", serif;
+            font-weight: 500;
+        }
+        ruby {
+            /* 强制 ruby 容器不换行，且字间距与拼音对齐 */
+            ruby-align: center;
+        }
+
+        rt {
+            font-size: 0.5em; /* 拼音缩小一点点，显得汉字更宏伟 */
+            letter-spacing: 0px; /* 拼音字母间不需要额外间距 */
+            transform: translateY(-2px); /* 让拼音稍微靠近汉字 */
         }
         .sutra-title { text-align: center; font-weight: bold; font-size: 28px; margin-bottom: 40px; color: #000; }
         .sutra-section { text-align: center; font-weight: bold; margin: 50px 0 20px 0; color: #884400; font-size: 22px; }
