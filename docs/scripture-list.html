@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>地藏菩萨本愿经 - 目录</title>
+    <title>经典阅读 - 书架</title>
     <style>
-        body { background: #f4f1ea; color: #3e3a36; font-family: sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding-top: 50px; }
-        .container { width: 90%; max-width: 400px; text-align: center; }
+        body { background: #f4f1ea; color: #3e3a36; font-family: sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 30px 0; }
+        .container { width: 90%; max-width: 450px; text-align: center; }
         h1 { color: #8c6d51; margin-bottom: 30px; letter-spacing: 2px; }
-        .menu-grid { display: flex; flex-direction: column; gap: 15px; }
-        .menu-card { 
-            background: white; padding: 20px; border-radius: 15px; text-decoration: none; 
-            color: #5d4037; box-shadow: 0 4px 10px rgba(0,0,0,0.05); font-weight: bold; font-size: 1.1rem;
+        .book-list { display: flex; flex-direction: column; gap: 15px; }
+        .book-card { 
+            background: white; padding: 25px; border-radius: 15px; text-decoration: none; 
+            color: #5d4037; box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            display: flex; justify-content: space-between; align-items: center;
         }
-        .menu-card:active { background: #fafafa; }
-        .back-btn { margin-top: 40px; text-decoration: none; color: #8c6d51; font-size: 0.9rem; border: 1px solid #8c6d51; padding: 8px 20px; border-radius: 20px; }
+        .book-title { font-weight: bold; font-size: 1.2rem; }
+        .book-status { font-size: 0.8rem; color: #8c6d51; border: 1px solid #8c6d51; padding: 2px 8px; border-radius: 10px; }
+        .back-btn { margin-top: 40px; text-decoration: none; color: #8c6d51; font-size: 0.9rem; border-bottom: 1px solid #8c6d51; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>地藏本愿经</h1>
-        <div class="menu-grid">
-            <a href="../dizang-01.html" class="menu-card">第一品：忉利天宫神通品</a>
-            <a href="../dizang-02.html" class="menu-card">第二品：分身集会品</a>
-            <a href="../dizang-03.html" class="menu-card">第三品：观众生业缘品</a>
+        <h1>经典阅读</h1>
+        <div class="book-list">
+            <a href="dizang-chapters.html" class="book-card">
+                <span class="book-title">地藏菩萨本愿经</span>
+                <span class="book-status">连载中</span>
+            </a>
+            
+            <a href="#" class="book-card" style="opacity: 0.6;">
+                <span class="book-title">般若波罗蜜多心经</span>
+                <span class="book-status">敬请期待</span>
+            </a>
         </div>
-        <a href="../index.html" class="back-btn">⬅ 返回主导航</a>
+        <a href="../index.html" class="back-btn">⬅ 返回功能中心</a>
     </div>
 </body>
 </html>
