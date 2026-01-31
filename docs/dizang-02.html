@@ -5,36 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>地藏菩萨本愿经 - 分身集会品第二</title>
     <style>
-        <style>
+       <style>
+    /* 1. 全局背景：宣纸色 */
     body { 
         background-color: #f4f1ea; 
         margin: 0; 
-        padding: 15px; 
+        padding: 20px 0; /* 上下留空，左右不留，由容器控制 */
         display: flex; 
         justify-content: center; 
         font-family: "PingFang SC", "Microsoft YaHei", serif;
     }
 
+    /* 2. 核心容器：控制一行 13 字的关键 */
     .sutra-container {
         background-color: #fff;
-        /* 这里的宽度和内边距配合，能控制一行大约 13-14 个字 */
-        width: 100%;
+        /* 这里的宽度 420px 配合 28px 字号，刚好是 13-14 个字左右 */
+        width: 92%;
         max-width: 420px; 
         padding: 40px 25px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
         
-        /* 关键调整：行高从 3.2 降到 2.4，既给注音留了空隙，又不会太散 */
+        /* 行高从 3.2 降到 2.4，让间距更紧致自然 */
         line-height: 2.4; 
-        letter-spacing: 2px; 
+        letter-spacing: 3px; 
         text-align: justify;
         
-        /* 关键调整：字号从 28px 降到 22px，确保手机端一行不会只塞几个字 */
-        font-size: 22px; 
+        /* 保持大字效果 */
+        font-size: 26px; 
         font-weight: 600;
         color: #000000;
     }
 
-    /* 保持你的注音逻辑，但稍微收紧层次感 */
+    /* 3. 注音(ruby)系统：确保注音不吃字 */
     ruby { 
         ruby-position: over; 
         ruby-align: center;
@@ -42,24 +44,29 @@
     }
 
     rt { 
-        font-size: 0.45em; 
+        font-size: 0.45em; /* 注音约为正文的一半 */
         color: #666666 !important; 
-        line-height: 1.2;      /* 限制注音行高，防止撑开太远 */
+        line-height: 1.2; 
         margin-bottom: 0.1em; 
         font-weight: normal;
         letter-spacing: 0;
     }
 
-    p { margin-bottom: 1.5em; }
+    /* 4. 段落与间距 */
+    p { margin-bottom: 1.2em; margin-top: 0; }
     p, span { color: #000000 !important; }
 
-    /* 标题样式 */
-    .sutra-title { text-align: center; font-weight: bold; font-size: 26px; margin-bottom: 10px; color: #000; }
-    .sutra-subtitle { text-align: center; font-size: 20px; color: #884400; margin-bottom: 40px; }
+    /* 5. 标题类样式 */
+    .sutra-title { text-align: center; font-weight: bold; font-size: 30px; margin-bottom: 10px; color: #000; }
+    .sutra-subtitle { text-align: center; font-size: 22px; color: #884400; margin-bottom: 40px; font-weight: bold; }
     
-    /* 底部返回按钮 */
-    .footer-nav { text-align: center; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
-    .back-btn { color: #8c6d51; text-decoration: none; font-size: 16px; border: 1px solid #8c6d51; padding: 5px 15px; border-radius: 20px; }
+    /* 真言/提示标题 */
+    .mantra-title { font-size: 22px; color: #b00; border-left: 4px solid #b00; padding-left: 10px; margin: 30px 0 15px 0; font-weight: bold; }
+    .note { font-size: 18px; color: #888; font-weight: normal; }
+
+    /* 6. 底部返回按钮 */
+    .footer-nav { text-align: center; margin-top: 40px; border-top: 1px dashed #ccc; padding-top: 20px; }
+    .back-btn { color: #8c6d51; text-decoration: none; font-size: 18px; border-bottom: 1px solid #8c6d51; }
 </style>
     </style>
 </head>
