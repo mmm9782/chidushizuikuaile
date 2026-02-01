@@ -5,15 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>修行宝库 | 导航中心</title>
     
-    <link rel="apple-touch-icon" href="logo.png?v=1.1">
-    <link rel="icon" type="image/png" href="logo.png?v=1.1">
+    <link rel="apple-touch-icon" sizes="180x180" href="./logo.png?v=3.0">
+    <link rel="icon" type="image/png" href="./logo.png?v=3.0">
     
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="修行宝库">
 
     <style>
-        body { background: #f4f1ea; color: #3e3a36; font-family: -apple-system, sans-serif; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        body { 
+            background: #f4f1ea; 
+            color: #3e3a36; 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+        }
         .container { max-width: 500px; width: 90%; text-align: center; }
-        h1 { color: #8c6d51; margin-bottom: 30px; letter-spacing: 2px; font-weight: 400; }
+        h1 { color: #8c6d51; margin-bottom: 30px; letter-spacing: 3px; font-weight: 400; }
         
         .nav-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
         .nav-card { 
@@ -23,44 +34,39 @@
             text-decoration: none; 
             color: #5d4037; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .nav-card:active { transform: scale(0.95); box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+        .nav-card:active { transform: scale(0.95); }
         .nav-icon { font-size: 2.5rem; margin-bottom: 10px; }
         .nav-title { font-weight: bold; font-size: 1.1rem; }
         
-        .footer { margin-top: 40px; font-size: 0.8rem; color: #b0aaa5; letter-spacing: 1px; }
+        .footer { margin-top: 40px; font-size: 0.8rem; color: #b0aaa5; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>修行宝库</h1>
-        
         <div class="nav-grid">
             <a href="chat.html" class="nav-card">
                 <span class="nav-icon">💬</span>
                 <span class="nav-title">星辰大海</span>
             </a>
-            
             <a href="video-list.html" class="nav-card">
                 <span class="nav-icon">📹</span>
                 <span class="nav-title">精选视频</span>
             </a>
-            
             <a href="docs/scripture-list.html" class="nav-card">
                 <span class="nav-icon">📜</span>
                 <span class="nav-title">经典阅读</span>
             </a>
-            
             <a href="docs/qa-list.html" class="nav-card">
                 <span class="nav-icon">🙏</span>
                 <span class="nav-title">文字解惑</span>
             </a>
         </div>
-
         <div class="footer">工业级加密防护 · 诸恶莫作 众善奉行</div>
     </div>
 </body>
