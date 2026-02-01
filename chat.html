@@ -2,31 +2,27 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>✨ 星辰大海 - 实时室</title>
     <style>
-        body { background: #f0f2f5; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: sans-serif; }
-        .card { text-align: center; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h1 { color: #333; margin-bottom: 20px; }
-        p { color: #666; font-size: 1.1rem; }
+        body { background: #f0f2f5; margin: 0; font-family: -apple-system, sans-serif; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        .header { background: #fff; padding: 10px; text-align: center; border-bottom: 1px solid #eee; }
+        .header h1 { font-size: 1rem; margin: 0; color: #333; }
+        .back { color: #007aff; text-decoration: none; font-size: 12px; display: block; margin-top: 3px; }
+        .chat-container { flex: 1; width: 100%; height: 100%; }
+        iframe { border: none; width: 100%; height: 100%; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>✨ 星辰大海</h1>
-        <p>老师，看右下角！👇</p>
-        <p>那个蓝色的小气泡，点开它就能直接跟我聊天啦！</p>
-        <a href="index.html" style="color: #007aff; text-decoration: none;">⬅ 返回主页</a>
-    </div>
 
-    <script>
-        (function(d, w, c) {
-            w.ChatraID = 'p8uT8S7S7S7S7S7S'; // 老师为你准备好的房间
-            var s = d.createElement('script');
-            w[c] = w[c] || function() { (w[c].q = w[c].q || []).push(arguments); };
-            s.async = true; s.src = 'https://call.chatra.io/chatra.js';
-            if (d.head) d.head.appendChild(s);
-        })(document, window, 'Chatra');
-    </script>
+<div class="header">
+    <h1>✨ 星辰大海 · 实时畅聊</h1>
+    <a href="index.html" class="back">⬅ 返回主页</a>
+</div>
+
+<div class="chat-container">
+    <iframe src="https://www3.cbox.ws/box/?boxid=3551976&boxtag=L75Nru" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+</div>
+
 </body>
 </html>
