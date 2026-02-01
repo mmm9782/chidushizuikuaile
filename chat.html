@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>✨ 星辰大海 - 实时室</title>
+    <title>✨ 星辰大海 - 实时聊</title>
     <style>
-        body { background: #f0f2f5; margin: 0; font-family: -apple-system, sans-serif; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
-        .header { background: #fff; padding: 10px; text-align: center; border-bottom: 1px solid #eee; }
+        /* 2. 解决手机端滚动条不顺滑的问题 */
+        html, body { height: 100%; margin: 0; overflow: hidden; -webkit-overflow-scrolling: touch; }
+        body { background: #f0f2f5; display: flex; flex-direction: column; }
+        .header { background: #fff; padding: 12px; text-align: center; border-bottom: 1px solid #eee; flex-shrink: 0; }
         .header h1 { font-size: 1rem; margin: 0; color: #333; }
-        .back { color: #007aff; text-decoration: none; font-size: 12px; display: block; margin-top: 3px; }
-        .chat-container { flex: 1; width: 100%; height: 100%; }
-        iframe { border: none; width: 100%; height: 100%; }
+        .back { color: #007aff; text-decoration: none; font-size: 12px; display: block; margin-top: 5px; }
+        
+        /* 3. 核心：让聊天容器在手机上百分之百撑开 */
+        .chat-container { flex-grow: 1; width: 100%; position: relative; }
+        iframe { border: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0; }
     </style>
 </head>
 <body>
@@ -21,7 +25,7 @@
 </div>
 
 <div class="chat-container">
-    <iframe src="https://www3.cbox.ws/box/?boxid=3551976&boxtag=L75Nru" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+    <iframe src="https://www3.cbox.ws/box/?boxid=3551976&boxtag=L75Nru" allowtransparency="yes" allow="autoplay" frameborder="0"></iframe>
 </div>
 
 </body>
