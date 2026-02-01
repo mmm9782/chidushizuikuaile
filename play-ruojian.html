@@ -1,55 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>若见诸相非相 | 拾光宝库</title>
+    <title>若见诸相非相</title>
     <style>
-        body { background: #000; margin: 0; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-family: sans-serif; }
-        .video-box { width: 100%; max-width: 500px; position: relative; background: #000; box-shadow: 0 0 20px rgba(255,255,255,0.05); }
-        video { width: 100%; display: block; }
-        
-        /* 强制点击层：这是解决“没声音”和“不加载”的唯一办法 */
-        #play-mask {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.85); display: flex; flex-direction: column;
-            align-items: center; justify-content: center; z-index: 99; cursor: pointer;
-        }
-        .play-icon { width: 80px; height: 80px; border: 2px solid #d4c4a8; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; color: #d4c4a8; margin-bottom: 15px; }
-        
-        .info { margin-top: 30px; text-align: center; }
-        h2 { font-weight: 300; color: #d4c4a8; letter-spacing: 4px; font-size: 1.1rem; line-height: 1.6; }
-        .back-link { margin-top: 40px; color: #666; text-decoration: none; border: 1px solid #333; padding: 10px 30px; border-radius: 25px; font-size: 14px; display: inline-block; }
+        body { background: #000; margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; }
+        video { width: 100%; max-width: 600px; }
     </style>
 </head>
 <body>
-
-    <div class="video-box">
-        <div id="play-mask" onclick="forcePlay()">
-            <div class="play-icon">▶</div>
-            <p style="color:#d4c4a8; letter-spacing: 2px;">点击开启声音并播放</p>
-        </div>
-
-        <video id="mainVideo" playsinline preload="auto">
-            <source src="https://v.api.aa1.cn/api/api-video/video.php?url=https://raw.githubusercontent.com/mmm9782/chidushizuikuaile/main/video/ruojian.mp4" type="video/mp4">
-            <source src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/mmm9782/chidushizuikuaile/main/video/ruojian.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <div class="info">
-        <h2>若见诸相非相<br>即见如来</h2>
-        <a href="video-list.html" class="back-link">返回列表</a>
-    </div>
-
-    <script>
-        function forcePlay() {
-            var v = document.getElementById('mainVideo');
-            var mask = document.getElementById('play-mask');
-            mask.style.display = 'none';
-            v.muted = false; // 取消静音
-            v.volume = 1.0;  // 满音量
-            v.play();        // 播放
-        }
-    </script>
+    <video controls playsinline preload="metadata">
+        <source src="https://mmm9782.github.io/chidushizuikuaile/video/ruojian.mp4" type="video/mp4">
+        您的浏览器不支持
+    </video>
 </body>
 </html>
