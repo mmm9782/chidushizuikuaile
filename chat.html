@@ -4,51 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>✨ 星辰大海 | 拾光</title>
-    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css"/>
     <style>
         body { 
             margin: 0; padding: 0; background: #000; 
-            color: white; font-family: "Microsoft YaHei", sans-serif;
-            overflow-x: hidden;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            height: 100vh; color: white; 
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            overflow: hidden;
         }
+        
+        /* 换了一张更高清、更深邃的极光星空图 */
         .bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?fit=crop&w=1920&q=80') no-repeat center center;
-            background-size: cover; opacity: 0.5; z-index: -1;
+            background: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?fit=crop&w=2560&q=80') no-repeat center center;
+            background-size: cover; opacity: 0.7; z-index: -1;
         }
-        .container {
-            max-width: 800px; margin: 0 auto; padding: 100px 20px; text-align: center;
-        }
-        h1 { font-size: 3em; letter-spacing: 10px; font-weight: 200; margin-bottom: 50px; }
+
+        .content { text-align: center; text-shadow: 0 0 20px rgba(0,0,0,0.8); }
         
-        /* 留言板的磨砂感设置 */
-        #waline { 
-            background: rgba(255, 255, 255, 0.1); 
-            backdrop-filter: blur(10px);
-            border-radius: 15px; padding: 20px;
-            margin-top: 50px;
-        }
-        /* 调大留言板字体 */
-        :root { --waline-font-size: 18px; --waline-white: #fff; --waline-light-grey: #aaa; }
+        /* 调大标题，增加高级感 */
+        h1 { font-size: 3.5em; letter-spacing: 12px; font-weight: 200; margin-bottom: 20px; }
+        p { font-size: 1.2em; letter-spacing: 5px; opacity: 0.9; }
+
+        .footer { position: fixed; bottom: 30px; font-size: 0.8em; opacity: 0.5; letter-spacing: 2px; }
     </style>
 </head>
 <body>
+
     <div class="bg"></div>
-    <div class="container">
+
+    <div class="content">
         <h1>星辰大海</h1>
         <p>心之所向，便是拾光</p>
-        
-        <div id="waline"></div>
     </div>
 
-    <script type="module">
-        import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
-        init({
-          el: '#waline',
-          serverURL: 'https://waline-test-three-zeta.vercel.app', // 这是一个演示服务器
-          placeholder: '在这里留下你的足迹...',
-          lang: 'zh-CN',
-        });
-    </script>
+    <div class="footer">© 2026 拾光空间</div>
+
+    <script src="//code.tidio.co/bp0nspub4i4bklsyj77kfzfjot8sfd3p.js" async></script>
+
 </body>
 </html>
