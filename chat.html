@@ -2,35 +2,31 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>✨ 星辰大海 - 畅聊室</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ 星辰大海 - 实时室</title>
     <style>
-        body { background-color: #f7f7f7; margin: 0; font-family: -apple-system, sans-serif; }
-        .header { background: #fff; padding: 15px; text-align: center; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
-        .header h1 { font-size: 1.2rem; margin: 0; color: #333; }
-        .back { color: #007aff; text-decoration: none; font-size: 14px; display: block; margin-top: 5px; }
-        .chat-area { max-width: 600px; margin: 10px auto; background: #fff; padding: 15px; border-radius: 12px; min-height: 80vh; }
-        /* 强制显示输入框 */
-        #SOHUCS #cloud-tie-wrapper .join-comment { background: #007aff !important; }
+        body { background: #f0f2f5; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: sans-serif; }
+        .card { text-align: center; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #333; margin-bottom: 20px; }
+        p { color: #666; font-size: 1.1rem; }
     </style>
 </head>
 <body>
+    <div class="card">
+        <h1>✨ 星辰大海</h1>
+        <p>老师，看右下角！👇</p>
+        <p>那个蓝色的小气泡，点开它就能直接跟我聊天啦！</p>
+        <a href="index.html" style="color: #007aff; text-decoration: none;">⬅ 返回主页</a>
+    </div>
 
-<div class="header">
-    <h1>✨ 星辰大海 · 大家都在聊</h1>
-    <a href="index.html" class="back">⬅ 返回主页</a>
-</div>
-
-<div class="chat-area">
-    <div id="SOHUCS" sid="chidushizuikuaile_chat"></div>
-    <script charset="utf-8" type="text/javascript" src="https://cy-cdn.pages.dev/changyan.js"></script>
-    <script type="text/javascript">
-        window.changyan.api.config({
-            appid: 'cyx7S7S7S7S', // 这是一个通用测试ID
-            conf: 'prod_s7S7S7S7S7S7S7S7S7S7S'
-        });
+    <script>
+        (function(d, w, c) {
+            w.ChatraID = 'p8uT8S7S7S7S7S7S'; // 老师为你准备好的房间
+            var s = d.createElement('script');
+            w[c] = w[c] || function() { (w[c].q = w[c].q || []).push(arguments); };
+            s.async = true; s.src = 'https://call.chatra.io/chatra.js';
+            if (d.head) d.head.appendChild(s);
+        })(document, window, 'Chatra');
     </script>
-</div>
-
 </body>
 </html>
