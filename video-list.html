@@ -2,60 +2,57 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨ 若见诸相非相 | 即见如来</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>精选视频 | 拾光宝库</title>
     <style>
-        body { 
-            margin: 0; background: #000; color: white;
-            display: flex; flex-direction: column; align-items: center; justify-content: center; 
-            min-height: 100vh; font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-        }
+        /* 沿用您文字解惑页面的清新风格 */
+        body { background: #f4f1ea; color: #3e3a36; font-family: sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 40px 0; }
         
-        .bg {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, #1a1a2e 0%, #000000 100%);
-            z-index: -1;
-        }
-
-        .video-box {
-            width: 90%; max-width: 800px;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 12px; border-radius: 24px;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.9);
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        video { width: 100%; border-radius: 18px; display: block; background: #000; }
-
-        .info { text-align: center; margin-top: 40px; }
+        .container { width: 90%; max-width: 500px; text-align: center; }
         
-        h2 { font-weight: 200; letter-spacing: 4px; margin: 10px 0; color: #fff; font-size: 1.8em; line-height: 1.6; }
-        p { font-size: 1em; color: #666; letter-spacing: 5px; margin-top: 15px; }
+        .back-link { text-decoration: none; color: #aaa; font-size: 0.9rem; margin-bottom: 20px; display: block; }
+        
+        h1 { color: #8c6d51; font-size: 1.8rem; margin-bottom: 30px; letter-spacing: 4px; display: flex; align-items: center; justify-content: center; }
+        h1::before { content: "📹"; margin-right: 10px; }
 
-        .back-link {
-            margin-top: 50px; text-decoration: none; color: #444;
-            font-size: 13px; border: 1px solid #333; padding: 8px 25px;
-            border-radius: 30px; transition: 0.3s;
+        /* 列表容器 */
+        .video-list { display: flex; flex-direction: column; gap: 15px; }
+
+        /* 视频卡片样式：参考经典阅读页面的井然有序感 */
+        .video-item {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #5d4037;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .back-link:hover { color: #fff; border-color: #fff; }
+        .video-item:active { transform: scale(0.98); background: #faf9f7; }
+        .video-item::after { content: "▶"; font-size: 0.8rem; color: #c2b1a2; }
+
+        .footer { margin-top: 50px; font-size: 0.8rem; color: #ccc; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
-    <div class="bg"></div>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回主页</a>
+        <h1>精选视频</h1>
 
-    <div class="video-box">
-        <video controls preload="auto" playsinline webkit-playsinline>
-            <source src="video/ruojian.mp4" type="video/mp4">
-            您的设备暂不支持播放。
-        </video>
-    </div>
+        <div class="video-list">
+            <a href="play-ruojian.html" class="video-item">
+                若见诸相非相，即见如来
+            </a>
 
-    <div class="info">
-        <h2>若见诸相非相<br>即见如来</h2>
-        <p>— 拾光 · 禅静 —</p>
-        <br>
-        <a href="index.html" class="back-link">返回首页</a>
+            </div>
+
+        <div class="footer">正心正念 · 顺缘而行</div>
     </div>
 
 </body>
