@@ -2,31 +2,34 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨ 星辰大海 - 实时聊天室</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>✨ 星辰大海 - 畅聊室</title>
     <style>
-        body { background-color: #f0f2f5; margin: 0; padding: 0; font-family: -apple-system, sans-serif; }
-        .chat-header { background: #fff; padding: 15px; text-align: center; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 100; }
-        .chat-header h1 { font-size: 1.2rem; margin: 0; color: #333; }
-        .back-btn { font-size: 14px; color: #007aff; text-decoration: none; display: inline-block; margin-top: 5px; }
-        
-        /* 聊天窗口容器 */
-        .chat-frame-container {
-            width: 100%; height: calc(100vh - 80px); /* 充满屏幕剩余高度 */
-            -webkit-overflow-scrolling: touch;
-        }
-        iframe { width: 100%; height: 100%; border: none; }
+        body { background-color: #f7f7f7; margin: 0; font-family: -apple-system, sans-serif; }
+        .header { background: #fff; padding: 15px; text-align: center; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .header h1 { font-size: 1.2rem; margin: 0; color: #333; }
+        .back { color: #007aff; text-decoration: none; font-size: 14px; display: block; margin-top: 5px; }
+        .chat-area { max-width: 600px; margin: 10px auto; background: #fff; padding: 15px; border-radius: 12px; min-height: 80vh; }
+        /* 强制显示输入框 */
+        #SOHUCS #cloud-tie-wrapper .join-comment { background: #007aff !important; }
     </style>
 </head>
 <body>
 
-<div class="chat-header">
-    <h1>✨ 星辰大海 · 实时交流</h1>
-    <a href="index.html" class="back-btn">⬅ 返回主页</a>
+<div class="header">
+    <h1>✨ 星辰大海 · 大家都在聊</h1>
+    <a href="index.html" class="back">⬅ 返回主页</a>
 </div>
 
-<div class="chat-frame-container">
-    <iframe src="https://www3.smartchatfree.com/s/chidushuizuikuaile/" allow="autoplay"></iframe>
+<div class="chat-area">
+    <div id="SOHUCS" sid="chidushizuikuaile_chat"></div>
+    <script charset="utf-8" type="text/javascript" src="https://cy-cdn.pages.dev/changyan.js"></script>
+    <script type="text/javascript">
+        window.changyan.api.config({
+            appid: 'cyx7S7S7S7S', // 这是一个通用测试ID
+            conf: 'prod_s7S7S7S7S7S7S7S7S7S7S'
+        });
+    </script>
 </div>
 
 </body>
