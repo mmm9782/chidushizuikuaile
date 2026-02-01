@@ -3,30 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨ 星辰大海 | 拾光</title>
+    <title>💬 拾光私语 | 星辰大海</title>
     <style>
         body { 
             margin: 0; padding: 0; background: #000; 
             display: flex; flex-direction: column; align-items: center; justify-content: center; 
             height: 100vh; color: white; 
-            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
             overflow: hidden;
         }
         
-        /* 换了一张更高清、更深邃的极光星空图 */
+        /* 浪漫深邃的星空背景 */
         .bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?fit=crop&w=2560&q=80') no-repeat center center;
+            background: url('https://images.unsplash.com/photo-1462332420958-a05d1e002413?fit=crop&w=2560&q=80') no-repeat center center;
             background-size: cover; opacity: 0.7; z-index: -1;
         }
 
-        .content { text-align: center; text-shadow: 0 0 20px rgba(0,0,0,0.8); }
-        
-        /* 调大标题，增加高级感 */
-        h1 { font-size: 3.5em; letter-spacing: 12px; font-weight: 200; margin-bottom: 20px; }
-        p { font-size: 1.2em; letter-spacing: 5px; opacity: 0.9; }
+        .content { text-align: center; }
+        h2 { font-size: 2.2em; letter-spacing: 8px; font-weight: 200; margin-bottom: 10px; opacity: 0.9; }
+        p { font-size: 1em; letter-spacing: 3px; opacity: 0.6; }
 
-        .footer { position: fixed; bottom: 30px; font-size: 0.8em; opacity: 0.5; letter-spacing: 2px; }
+        /* 预加载假气泡：解决加载慢的问题 */
+        .fake-tidio {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 60px; height: 60px; background: #0084ff;
+            border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; z-index: 999;
+            animation: breathe 3s infinite;
+        }
+        @keyframes breathe { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
     </style>
 </head>
 <body>
@@ -34,13 +41,24 @@
     <div class="bg"></div>
 
     <div class="content">
-        <h1>星辰大海</h1>
-        <p>心之所向，便是拾光</p>
+        <h2>拾光私语</h2>
+        <p>在星辰下，留下您的足迹</p>
     </div>
 
-    <div class="footer">© 2026 拾光空间</div>
+    <div class="fake-tidio" onclick="tidioChatApi.display(true); tidioChatApi.open();">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2 22l5-1.338c1.47.851 3.179 1.338 5 1.338 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+    </div>
 
     <script src="//code.tidio.co/bp0nspub4i4bklsyj77kfzfjot8sfd3p.js" async></script>
+
+    <script>
+        // 当 Tidio 真的加载好了，把假按钮藏起来
+        document.onTidioChatApiReady = function() {
+            document.querySelector('.fake-tidio').style.display = 'none';
+            // 自动弹出对话框，增加互动感
+            setTimeout(() => { tidioChatApi.open(); }, 1000);
+        };
+    </script>
 
 </body>
 </html>
