@@ -6,39 +6,47 @@
     <title>若见诸相非相 | 拾光宝库</title>
     <style>
         body { background: #000; margin: 0; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-family: sans-serif; }
-        .video-box { width: 100%; max-width: 500px; position: relative; background: #000; border-radius: 8px; overflow: hidden; }
-        video { width: 100%; display: block; }
-        #play-btn {
+        .video-box { width: 100%; max-width: 500px; position: relative; background: #000; }
+        video { width: 100%; display: block; border: 1px solid #333; }
+        
+        /* 强制点击层：这是解决“没声音”的唯一办法 */
+        #play-mask {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.75); display: flex; flex-direction: column;
-            align-items: center; justify-content: center; z-index: 10; cursor: pointer;
+            background: rgba(0,0,0,0.8); display: flex; flex-direction: column;
+            align-items: center; justify-content: center; z-index: 99; cursor: pointer;
         }
-        .icon { width: 80px; height: 80px; border: 3px solid #d4c4a8; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; color: #d4c4a8; margin-bottom: 15px; }
-        .info { margin-top: 25px; text-align: center; padding: 0 20px; }
+        .play-icon { width: 80px; height: 80px; border: 2px solid #d4c4a8; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; color: #d4c4a8; margin-bottom: 15px; }
+        
+        .info { margin-top: 30px; text-align: center; }
         h2 { font-weight: 300; color: #d4c4a8; letter-spacing: 4px; font-size: 1.1rem; }
-        .back { margin-top: 35px; color: #666; text-decoration: none; border: 1px solid #333; padding: 10px 30px; border-radius: 25px; font-size: 14px; display: inline-block; }
+        .back-link { margin-top: 40px; color: #666; text-decoration: none; border: 1px solid #333; padding: 10px 30px; border-radius: 25px; font-size: 14px; display: inline-block; }
     </style>
 </head>
 <body>
+
     <div class="video-box">
-        <div id="play-btn" onclick="playVid()">
-            <div class="icon">▶</div>
-            <span style="color:#d4c4a8; letter-spacing:2px;">点击开启智慧之声</span>
+        <div id="play-mask" onclick="forcePlay()">
+            <div class="play-icon">▶</div>
+            <p style="color:#d4c4a8">点击开启声音并播放</p>
         </div>
-        <video id="v" playsinline>
-            <source src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/mmm9782/chidushizuikuaile/main/video/ruojian.mp4" type="video/mp4">
+
+        <video id="mainVideo" playsinline preload="auto">
+            <source src="https://pub-2736444853034293a61f38e072c442e9.r2.dev/ruojian.mp4" type="video/mp4">
         </video>
     </div>
+
     <div class="info">
         <h2>若见诸相非相，即见如来</h2>
-        <a href="video-list.html" class="back">返回列表</a>
+        <a href="video-list.html" class="back-link">返回列表</a>
     </div>
+
     <script>
-        function playVid() {
-            var v = document.getElementById('v');
-            document.getElementById('play-btn').style.display = 'none';
-            v.play();
-            v.muted = false;
+        function forcePlay() {
+            var v = document.getElementById('mainVideo');
+            var mask = document.getElementById('play-mask');
+            mask.style.display = 'none';
+            v.muted = false; // 关键：取消静音
+            v.play();        // 播放
         }
     </script>
 </body>
