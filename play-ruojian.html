@@ -5,27 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>若见诸相非相 | 拾光宝库</title>
     <style>
-        body { background: #000; margin: 0; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .video-container { width: 100%; max-width: 800px; background: #000; }
-        video { width: 100%; display: block; outline: none; }
-        .info { margin-top: 30px; text-align: center; padding: 0 20px; }
-        h2 { font-weight: 300; letter-spacing: 4px; color: #d4c4a8; font-size: 1.2rem; line-height: 1.6; }
-        .back-btn { margin-top: 40px; text-decoration: none; color: #888; border: 1px solid #444; padding: 12px 35px; border-radius: 30px; font-size: 14px; display: inline-block; }
+        body { background: #000; margin: 0; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-family: sans-serif; overflow: hidden; }
+        .video-box { width: 100%; max-width: 800px; position: relative; }
+        video { width: 100%; display: block; }
+        
+        /* 解决声音问题的提示层 */
+        #play-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); display: flex; flex-direction: column;
+            align-items: center; justify-content: center; z-index: 10; cursor: pointer;
+        }
+        .play-btn { width: 70px; height: 70px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; border: 2px solid #fff; margin-bottom: 15px; }
+        
+        .info { margin-top: 20px; text-align: center; }
+        h2 { font-weight: 300; color: #d4c4a8; letter-spacing: 4px; font-size: 1.1rem; }
+        .back { margin-top: 30px; color: #666; text-decoration: none; border: 1px solid #333; padding: 8px 25px; border-radius: 20px; font-size: 13px; display: inline-block; }
     </style>
 </head>
 <body>
 
-    <div class="video-container">
-        <video controls playsinline preload="auto" poster="">
-            <source src="https://ghproxy.net/https://raw.githubusercontent.com/mmm9782/chidushizuikuaile/main/video/ruojian.mp4" type="video/mp4">
-            您的设备暂不支持播放。
+    <div class="video-box">
+        <div id="play-overlay" onclick="startVideo()">
+            <div class="play-btn">▶</div>
+            <span>点击开启智慧之声</span>
+        </div>
+
+        <video id="myVideo" playsinline preload="auto">
+            <source src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/mmm9782/chidushizuikuaile/main/video/ruojian.mp4" type="video/mp4">
         </video>
     </div>
 
     <div class="info">
-        <h2>若见诸相非相<br>即见如来</h2>
-        <a href="video-list.html" class="back-btn">返回精选列表</a>
+        <h2>若见诸相非相，即见如来</h2>
+        <a href="video-list.html" class="back">返回列表</a>
     </div>
 
+    <script>
+        function startVideo() {
+            var v = document.getElementById('myVideo');
+            var overlay = document.getElementById('play-overlay');
+            v.play(); // 播放
+            v.muted = false; // 强制解除静音
+            overlay.style.display = 'none'; // 隐藏遮罩
+        }
+    </script>
 </body>
 </html>
